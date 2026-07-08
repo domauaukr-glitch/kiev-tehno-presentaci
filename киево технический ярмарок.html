@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DomaUA – Київський технічний ярмарок 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800;900&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0b0f1a;
+            color: #e8e6e3;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0b0f1a; }
+        ::-webkit-scrollbar-thumb { background: #c8a85e; border-radius: 4px; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .gold { color: #c8a85e; }
+        .section-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #c8a85e;
+            border: 1px solid rgba(200,168,94,0.25);
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 0.75rem;
+            background: rgba(200,168,94,0.05);
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+        .section-sub {
+            font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+            color: rgba(232,230,227,0.65);
+            max-width: 640px;
+            margin: 0 auto 1.5rem;
+            font-weight: 300;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #c8a85e;
+            color: #0b0f1a;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(200,168,94,0.15);
+        }
+        .btn-primary:hover {
+            background: #dbb96e;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(200,168,94,0.25);
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: transparent;
+            color: #e8e6e3;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 1px solid rgba(200,168,94,0.3);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: rgba(200,168,94,0.08);
+            border-color: #c8a85e;
+            transform: translateY(-2px);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 0 60px;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 26, 0.75);
+            z-index: 1;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #c8a85e;
+            border: 1px solid rgba(200,168,94,0.15);
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+            background: rgba(200,168,94,0.04);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: clamp(2.4rem, 7vw, 4.8rem);
+            line-height: 1.05;
+            margin-bottom: 0.75rem;
+        }
+        .hero h1 .gold { font-weight: 900; }
+        .hero .sub-title {
+            font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+            color: rgba(232,230,227,0.7);
+            max-width: 680px;
+            margin: 0 auto 1.5rem;
+            font-weight: 300;
+        }
+        .expo-link-block {
+            margin: 0.5rem auto 1.5rem;
+            max-width: 680px;
+            background: rgba(200,168,94,0.04);
+            border: 1px solid rgba(200,168,94,0.08);
+            border-radius: 12px;
+            padding: 0.6rem 1.2rem;
+            transition: 0.3s;
+        }
+        .expo-link-block:hover {
+            background: rgba(200,168,94,0.08);
+            border-color: rgba(200,168,94,0.15);
+        }
+        .expo-link-block a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem 0.8rem;
+            flex-wrap: wrap;
+        }
+        .expo-link-block .expo-name {
+            font-weight: 700;
+            color: #c8a85e;
+            font-size: clamp(0.85rem, 1.1vw, 1rem);
+        }
+        .expo-link-block .expo-desc {
+            font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+            color: rgba(232,230,227,0.5);
+        }
+        .expo-link-block .expo-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.7rem;
+            color: #c8a85e;
+            border-bottom: 1px solid rgba(200,168,94,0.2);
+            transition: 0.3s;
+        }
+        .expo-link-block:hover .expo-arrow {
+            border-bottom-color: #c8a85e;
+        }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+
+        /* ===== АУДИТОРІЯ ===== */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        @media (max-width: 768px) {
+            .audience-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .audience-grid { grid-template-columns: 1fr; }
+        }
+        .audience-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(200,168,94,0.06);
+            border-radius: 14px;
+            padding: 1.2rem 1.2rem;
+            transition: 0.4s;
+        }
+        .audience-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(200,168,94,0.15);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            background: rgba(200,168,94,0.03);
+        }
+        .audience-card .icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .audience-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e8e6e3;
+            margin-bottom: 0.3rem;
+        }
+        .audience-card p {
+            font-size: 0.8rem;
+            color: rgba(232,230,227,0.55);
+            line-height: 1.5;
+            margin: 0;
+        }
+        .audience-card p strong { color: #c8a85e; font-weight: 600; }
+
+        .audience-resume {
+            background: rgba(200,168,94,0.04);
+            border: 1px solid rgba(200,168,94,0.1);
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+            max-width: 850px;
+            margin: 1.5rem auto 0;
+            text-align: center;
+        }
+        .audience-resume p {
+            font-size: 1.05rem;
+            color: rgba(232,230,227,0.8);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .audience-resume strong { color: #c8a85e; }
+        .audience-resume .gold { font-weight: 700; }
+
+        /* ===== СТАТИСТИКА ВИСТАВКИ ===== */
+        .expo-stats-block {
+            padding: 40px 0 30px;
+            background: rgba(255,255,255,0.01);
+            border-top: 1px solid rgba(200,168,94,0.04);
+            border-bottom: 1px solid rgba(200,168,94,0.04);
+            text-align: center;
+        }
+        .expo-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        @media (max-width: 600px) {
+            .expo-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+        }
+        .expo-stats-grid .stat-item .number {
+            font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+            font-weight: 900;
+            color: #c8a85e;
+            line-height: 1.1;
+            display: block;
+        }
+        .expo-stats-grid .stat-item .label {
+            font-size: 0.7rem;
+            color: rgba(232,230,227,0.4);
+            display: block;
+            margin-top: 0.1rem;
+        }
+
+        /* ===== ПРОЦЕС ===== */
+        .process-block {
+            padding: 40px 0;
+        }
+        .process-line {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        @media (max-width: 600px) {
+            .process-line { flex-direction: column; gap: 0.5rem; }
+            .process-line .arrow { transform: rotate(90deg); }
+        }
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(255,255,255,0.02);
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(200,168,94,0.05);
+        }
+        .process-step .num {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #c8a85e;
+            background: rgba(200,168,94,0.1);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .process-step .text {
+            font-size: 0.8rem;
+            color: rgba(232,230,227,0.7);
+            font-weight: 400;
+        }
+        .process-step .text strong { color: #e8e6e3; font-weight: 700; }
+        .process-line .arrow {
+            font-size: 1.2rem;
+            color: rgba(200,168,94,0.3);
+        }
+
+        /* ===== ЧОМУ З НАМИ ПРОСТІШЕ ===== */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        @media (max-width: 600px) { .why-grid { grid-template-columns: 1fr; } }
+        .why-grid .item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(200,168,94,0.05);
+            border-radius: 10px;
+            padding: 0.6rem 1rem;
+            font-size: 0.85rem;
+            color: rgba(232,230,227,0.7);
+        }
+        .why-grid .item i {
+            color: #4caf50;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .why-grid .item strong { color: #e8e6e3; }
+
+        /* ===== ЦІНА ===== */
+        .price-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 800px;
+            margin: 1rem auto;
+        }
+        @media (max-width: 600px) { .price-wrapper { grid-template-columns: 1fr; gap: 1.5rem; } }
+        .price-wrapper .price-box {
+            background: rgba(200,168,94,0.04);
+            border: 2px solid #c8a85e;
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .price-wrapper .price-box .amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: #c8a85e;
+            line-height: 1;
+        }
+        .price-wrapper .price-box .currency { font-size: 1.6rem; font-weight: 600; color: #c8a85e; }
+        .price-wrapper .price-box .label { font-size: 0.7rem; color: rgba(232,230,227,0.3); margin-top: 0.2rem; display: block; }
+        .price-wrapper .price-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 0.8rem;
+        }
+        @media (max-width: 480px) { .price-wrapper .price-list { grid-template-columns: 1fr; } }
+        .price-wrapper .price-list .item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: rgba(232,230,227,0.6);
+        }
+        .price-wrapper .price-list .item i { color: #4caf50; font-size: 0.7rem; }
+
+        /* ===== ЕКОСИСТЕМА ===== */
+        .eco-flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem 1.2rem;
+            max-width: 700px;
+            margin: 1rem auto;
+        }
+        @media (max-width: 500px) { .eco-flow { flex-direction: column; gap: 0.4rem; } }
+        .eco-flow .item {
+            font-size: 0.85rem;
+            color: rgba(232,230,227,0.5);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .eco-flow .item i { color: #c8a85e; }
+        .eco-flow .item strong { color: #e8e6e3; font-weight: 600; }
+        .eco-flow .arrow { color: rgba(200,168,94,0.2); font-size: 0.9rem; }
+
+        .eco-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .eco-card-link {
+            text-decoration: none;
+            display: block;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(200,168,94,0.06);
+            border-radius: 16px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            color: #e8e6e3;
+        }
+        .eco-card-link:hover {
+            transform: translateY(-6px);
+            border-color: #c8a85e;
+            box-shadow: 0 16px 50px rgba(200,168,94,0.08);
+            background: rgba(200,168,94,0.03);
+        }
+        .eco-card-link:hover h4 { color: #c8a85e; }
+        .eco-card-link .icon { font-size: 2.6rem; display: block; margin-bottom: 0.5rem; }
+        .eco-card-link h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; transition: color 0.3s; }
+        .eco-card-link p { font-size: 0.85rem; color: rgba(232,230,227,0.45); font-weight: 300; }
+        .eco-card-link .link-hint {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.7rem;
+            color: #c8a85e;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .eco-card-link:hover .link-hint { opacity: 1; }
+
+        .eco-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(200,168,94,0.06);
+            border-radius: 16px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            transition: 0.4s;
+        }
+        .eco-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(200,168,94,0.12);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+        .eco-card .icon { font-size: 2.6rem; color: #c8a85e; display: block; margin-bottom: 0.5rem; }
+        .eco-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; }
+        .eco-card p { font-size: 0.85rem; color: rgba(232,230,227,0.45); font-weight: 300; }
+
+        /* ===== СТАТИСТИКА DOMAUA ===== */
+        .domaua-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        @media (max-width: 600px) { .domaua-stats { grid-template-columns: repeat(2, 1fr); } }
+        .domaua-stats .stat-item .number {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 900;
+            color: #c8a85e;
+            line-height: 1.1;
+            display: block;
+        }
+        .domaua-stats .stat-item .label {
+            font-size: 0.75rem;
+            color: rgba(232,230,227,0.4);
+            display: block;
+        }
+
+        /* ===== БЛОК ПРО ВИСТАВКУ ===== */
+        .interbuild-block {
+            background: rgba(200,168,94,0.03);
+            border: 1px solid rgba(200,168,94,0.08);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        @media (max-width: 600px) {
+            .interbuild-block { padding: 1.5rem; }
+        }
+        .interbuild-block .expo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c8a85e;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .interbuild-block .expo-name a {
+            color: #c8a85e;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .interbuild-block .expo-name a:hover {
+            color: #dbb96e;
+            text-decoration: underline;
+        }
+        .interbuild-block p {
+            font-size: 0.95rem;
+            color: rgba(232,230,227,0.65);
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+        .interbuild-block .expo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #c8a85e;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            border-bottom: 1px solid transparent;
+        }
+        .interbuild-block .expo-link:hover {
+            border-bottom-color: #c8a85e;
+            color: #dbb96e;
+        }
+
+        /* ===== БЛОКИ ===== */
+        section { padding: 80px 0; }
+        section:nth-child(even) { background: rgba(255,255,255,0.01); }
+        .section-center { text-align: center; }
+
+        /* ===== ФОТО ГАЛЕРЕЯ ===== */
+        .expo-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 900px;
+            margin: 1.5rem auto;
+        }
+        @media (max-width: 600px) { .expo-gallery { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 400px) { .expo-gallery { grid-template-columns: 1fr; } }
+        .expo-gallery .photo-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(200,168,94,0.06);
+            transition: 0.3s;
+            aspect-ratio: 4/3;
+        }
+        .expo-gallery .photo-item:hover {
+            transform: scale(1.02);
+            border-color: rgba(200,168,94,0.15);
+        }
+        .expo-gallery .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .brand-photo-wrapper {
+            max-width: 700px;
+            margin: 1.5rem auto;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(200,168,94,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+        .brand-photo-wrapper:hover { transform: scale(1.01); border-color: rgba(200,168,94,0.2); }
+        .brand-photo-wrapper img { width: 100%; height: auto; display: block; }
+        .brand-photo-caption {
+            font-size: 0.7rem;
+            color: rgba(232,230,227,0.25);
+            text-align: center;
+            padding: 0.5rem 0;
+            background: rgba(0,0,0,0.2);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-cta {
+            position: relative;
+            padding: 80px 0 60px;
+            text-align: center;
+            overflow: hidden;
+            background: #0b0f1a;
+        }
+        .footer-cta .footer-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.12;
+            z-index: 0;
+        }
+        .footer-cta .container { position: relative; z-index: 1; }
+        .footer-cta .section-title { max-width: 700px; margin: 0 auto 0.5rem; }
+        .footer-cta .btn-primary { font-size: 1.05rem; padding: 0.9rem 2.5rem; }
+        .footer-contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 2rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .footer-contacts a {
+            color: rgba(232,230,227,0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .footer-contacts a:hover { color: #c8a85e; }
+        .footer-contacts a i { color: #c8a85e; }
+        .footer-bottom {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(200,168,94,0.04);
+            font-size: 0.7rem;
+            color: rgba(232,230,227,0.15);
+        }
+
+        /* СРОЧНОСТЬ */
+        .urgency-block {
+            background: rgba(200,168,94,0.03);
+            border: 1px solid rgba(200,168,94,0.08);
+            border-radius: 14px;
+            padding: 0.8rem 1.5rem;
+            display: inline-block;
+            margin: 0.5rem auto;
+        }
+        .urgency-block .num { font-weight: 900; color: #c8a85e; }
+
+        @media (max-width: 768px) {
+            section { padding: 56px 0; }
+            .hero { min-height: 90vh; padding: 60px 0 40px; }
+            .footer-cta { padding: 56px 0 40px; }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            .hero h1 { font-size: 2rem; }
+            .btn-primary, .btn-outline { font-size: 0.85rem; padding: 0.6rem 1.4rem; }
+        }
+        [data-aos] { pointer-events: none; }
+        [data-aos].aos-animate { pointer-events: auto; }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+    <img src="https://i.postimg.cc/Z9HcMBFr/BIKO-Sales-Growth-Strategy-pdf.jpg" alt="Фон" class="hero-bg" onerror="this.style.display='none'">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-badge" data-aos="fade-up">✦ DomaUA — продаж через виставки</div>
+        <h1 data-aos="fade-up" data-aos-delay="100">
+            Представимо ваш бізнес на <span class="gold">найбільшій технічній виставці</span> України
+        </h1>
+        <p class="sub-title" data-aos="fade-up" data-aos-delay="200">
+            Знайдемо покупців та інвесторів для вашого об'єкта
+        </p>
+
+        <div class="expo-link-block" data-aos="fade-up" data-aos-delay="250">
+            <a href="https://www.iec-expo.com.ua/" target="_blank">
+                <span class="expo-name">Київський технічний ярмарок 2026</span>
+                <span class="expo-desc">— де знаходяться покупці</span>
+                <span class="expo-arrow">
+                    Детальніше <i class="fas fa-arrow-up-right-from-square"></i>
+                </span>
+            </a>
+            <div style="font-size: 0.65rem; color: rgba(232,230,227,0.25); text-align: center; margin-top: 0.2rem;">
+                XIV Міжнародна спеціалізована виставка: машинобудування, металообробка, автоматизація, інструмент, зварювання, гідравліка, пневматика, підшипники, компресори, приводи, складське обладнання, прилади, безпека виробництва.
+            </div>
+        </div>
+
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+            <a href="https://wa.me/380679592044" target="_blank" class="btn-primary"><i class="fas fa-arrow-right"></i> Забронювати участь</a>
+            <a href="https://wa.me/380679592044" target="_blank" class="btn-outline"><i class="fas fa-phone-alt"></i> Консультація</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ДРУГИЙ СЛАЙД – ЦІЛЬОВА АУДИТОРІЯ ===== -->
+<section data-aos="fade-up" data-aos-duration="700" style="background: rgba(255,255,255,0.01);">
+    <div class="container section-center">
+        <span class="section-tag">Хто прийде до вас?</span>
+        <h2 class="section-title">Ваша <span class="gold">цільова аудиторія</span> на виставці</h2>
+        <p class="section-sub">Ви зустрінете не випадкових людей, а директорів та власників, які цілеспрямовано шукають готові рішення</p>
+
+        <div class="audience-grid">
+            <div class="audience-card">
+                <span class="icon">💰</span>
+                <h4>Інвестори в промисловість</h4>
+                <p><strong>Інвестори та представники інвестиційних фондів</strong> — шукають перспективні активи та готові бізнеси для вкладень.</p>
+            </div>
+            <div class="audience-card">
+                <span class="icon">📋</span>
+                <h4>Керівники відділів закупівель</h4>
+                <p><strong>Менеджери з постачання та закупівель</strong> — шукають надійних постачальників та вигідні пропозиції для своїх підприємств.</p>
+            </div>
+            <div class="audience-card">
+                <span class="icon">🤝</span>
+                <h4>Партнери для співпраці</h4>
+                <p><strong>Підприємці та власники бізнесу</strong> — шукають нові партнерства, спільні проєкти та можливості для розвитку.</p>
+            </div>
+            <div class="audience-card">
+                <span class="icon">⚙️</span>
+                <h4>Власники виробництв</h4>
+                <p><strong>Директори та власники промислових підприємств</strong> — люди, які шукають обладнання, технології та рішення для модернізації своїх виробництв.</p>
+            </div>
+            <div class="audience-card">
+                <span class="icon">🔧</span>
+                <h4>Технічні фахівці та інженери</h4>
+                <p><strong>Головні інженери, технологи, конструктори</strong> — ті, хто шукає сучасне обладнання, інструменти та матеріали для вирішення конкретних виробничих завдань.</p>
+            </div>
+            <div class="audience-card">
+                <span class="icon">🏭</span>
+                <h4>Постачальники обладнання</h4>
+                <p><strong>Виробники та дистриб'ютори промислового обладнання</strong> — шукають нові ринки збуту та партнерів для розширення бізнесу.</p>
+            </div>
+        </div>
+
+        <div class="audience-resume">
+            <p>
+                <i class="fas fa-quote-left" style="color: #c8a85e; margin-right: 0.5rem;"></i>
+                На виставці ви зустрінете не випадкових перехожих, а директорів та власників, які цілеспрямовано приїхали для пошуку готових рішень та інвестиційних можливостей. <span class="gold" style="font-weight: 700;">Ваш об'єкт — це саме той продукт, який вони шукають.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== СТАТИСТИКА ВИСТАВКИ ===== -->
+<section class="expo-stats-block" data-aos="fade-up" data-aos-duration="700">
+    <div class="container">
+        <div class="expo-stats-grid">
+            <div class="stat-item"><span class="number">10 000+</span><span class="label">відвідувачів</span></div>
+            <div class="stat-item"><span class="number">30+</span><span class="label">галузей</span></div>
+            <div class="stat-item"><span class="number">3</span><span class="label">дні</span></div>
+            <div class="stat-item"><span class="number">1</span><span class="label">місце</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ПРОЦЕС (ОНОВЛЕНО – КРОК 4) ===== -->
+<section class="process-block" data-aos="fade-up" data-aos-duration="700">
+    <div class="container section-center">
+        <span class="section-tag">Як ми працюємо</span>
+        <h2 class="section-title">Від вас — <span class="gold">інформація</span>, від нас — <span class="gold">результат</span></h2>
+        <div class="process-line">
+            <div class="process-step"><span class="num">①</span><span class="text"><strong>Надсилаєте</strong> інформацію</span></div>
+            <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+            <div class="process-step"><span class="num">②</span><span class="text"><strong>Створюємо</strong> презентацію</span></div>
+            <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+            <div class="process-step"><span class="num">③</span><span class="text"><strong>Представляємо</strong> на виставці</span></div>
+            <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+            <div class="process-step"><span class="num">④</span><span class="text"><strong>Передаємо контакти</strong> покупців з фіксацією бюджету, потреб та готовності до переговорів</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ЧОМУ З НАМИ ПРОСТІШЕ (ДОДАНО ПУНКТ ПРО КОНКРЕТИКУ) ===== -->
+<section data-aos="fade-up" data-aos-duration="700">
+    <div class="container section-center">
+        <span class="section-tag">Чому DomaUA</span>
+        <h2 class="section-title">З нами <span class="gold">простіше</span></h2>
+        <div class="why-grid">
+            <div class="item"><i class="fas fa-check-circle"></i> <strong>самі оформлюємо</strong> стенд</div>
+            <div class="item"><i class="fas fa-check-circle"></i> <strong>самі друкуємо</strong> матеріали</div>
+            <div class="item"><i class="fas fa-check-circle"></i> <strong>самі спілкуємось</strong> з відвідувачами</div>
+            <div class="item"><i class="fas fa-check-circle"></i> <strong>самі збираємо</strong> контакти</div>
+            <div class="item" style="grid-column: 1 / -1; justify-self: center; background: rgba(200,168,94,0.12); border-color: #c8a85e; border-width: 2px;">
+                <i class="fas fa-fire" style="color: #c8a85e;"></i>
+                <strong style="color: #c8a85e;">передаємо не просто номери, а зафіксовані запити:</strong>
+                <span style="color: #e8e6e3;">бюджет інвестора, що шукає, коли готовий до переговорів</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ФОРМАТ УЧАСТІ (ДОДАНО ПОЯСНЕННЯ) ===== -->
+<section id="package" data-aos="fade-up" data-aos-duration="700">
+    <div class="container section-center">
+        <span class="section-tag">Формат участі</span>
+        <h2 class="section-title">Маркетинг <span class="gold">під ключ</span></h2>
+        <p class="section-sub">Усе включено — залишається тільки чекати на покупців</p>
+
+        <div class="brand-photo-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://i.postimg.cc/J08vYjmh/BIKO-Sales-Growth-Strategy-pdf-(1).jpg" alt="Стенд DomaUA" onerror="this.src='https://placehold.co/800x500/1a1f2e/c8a85e?text=DomaUA'">
+            <div class="brand-photo-caption">Ваш бренд у центрі уваги — стенд DomaUA</div>
+        </div>
+
+        <div class="expo-gallery" data-aos="fade-up" data-aos-delay="150">
+            <div class="photo-item">
+                <img src="https://i.postimg.cc/Xr9LRcg5/Risunok1.jpg" alt="Фото виставки" onerror="this.style.display='none'">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.postimg.cc/94nvMYv0/izobrazenie-viber-2026-07-08-11-20-01-355.jpg" alt="Фото виставки" onerror="this.style.display='none'">
+            </div>
+            <div class="photo-item">
+                <img src="https://i.postimg.cc/ykZ2NRPd/izobrazenie-viber-2023-10-17-12-28-55-383.jpg" alt="Фото виставки" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <div class="price-wrapper" data-aos="fade-up" data-aos-delay="200">
+            <div class="price-box">
+                <span class="label">Вартість пакету</span>
+                <div class="amount"><span class="currency">€</span> 350</div>
+                <span class="label">фіксована ціна, без прихованих платежів</span>
+                <div style="margin-top: 0.5rem; font-size: 0.7rem; color: rgba(232,230,227,0.2);">* Дизайн, друк та монтаж включені</div>
+            </div>
+            <div class="price-list">
+                <div class="item"><i class="fas fa-check-circle"></i> Стенд 6 м²</div>
+                <div class="item"><i class="fas fa-check-circle"></i> Дизайн плаката</div>
+                <div class="item"><i class="fas fa-check-circle"></i> Друк плаката 1.8×2 м</div>
+                <div class="item"><i class="fas fa-check-circle"></i> 300 флаєрів</div>
+                <div class="item"><i class="fas fa-check-circle"></i> Менеджер на стенді</div>
+                <div class="item"><i class="fas fa-check-circle"></i> Збір лідів</div>
+                <div class="item" style="grid-column: 1 / -1; justify-self: center;"><i class="fas fa-check-circle"></i> Передача контактів покупців</div>
+            </div>
+        </div>
+        <p style="font-size: 0.8rem; color: rgba(232,230,227,0.3); margin-top: 0.8rem;">
+            <i class="fas fa-info-circle" style="color: #c8a85e;"></i>
+            Ми не просто збираємо візитки – ми фіксуємо <strong style="color: #e8e6e3;">бюджет, потреби та готовність до переговорів</strong> кожного потенційного покупця.
+        </p>
+    </div>
+</section>
+
+<!-- ===== ЕКОСИСТЕМА + СТАТИСТИКА DOMAUA ===== -->
+<section id="ecosystem" data-aos="fade-up" data-aos-duration="700" style="background: rgba(255,255,255,0.01);">
+    <div class="container section-center">
+        <span class="section-tag">Цифрова екосистема</span>
+        <h2 class="section-title">Після виставки <span class="gold">продаж не закінчується</span></h2>
+        <p class="section-sub">Ваш бізнес залишається на наших платформах і продовжує працювати на вас</p>
+
+        <div class="eco-flow">
+            <span class="item"><i class="fas fa-globe"></i> <strong>Сайт</strong></span>
+            <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+            <span class="item"><i class="fab fa-youtube"></i> <strong>YouTube</strong></span>
+            <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+            <span class="item"><i class="fab fa-google"></i> <strong>Google</strong></span>
+            <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+            <span class="item"><i class="fas fa-search"></i> <strong>Пошук</strong></span>
+            <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+            <span class="item"><i class="fas fa-user-tie"></i> <strong>Інвестори знаходять</strong> вас навіть через місяці</span>
+        </div>
+
+        <div class="eco-grid" data-aos="fade-up" data-aos-delay="200">
+            <a href="https://domaua.com/" target="_blank" class="eco-card-link">
+                <span class="icon"><i class="fas fa-globe"></i></span>
+                <h4>Портал DomaUA</h4>
+                <p>Розміщення об'єкта на domaua.com</p>
+                <span class="link-hint"><i class="fas fa-arrow-up-right-from-square"></i> перейти</span>
+            </a>
+            <a href="https://www.youtube.com/@domaua7689" target="_blank" class="eco-card-link">
+                <span class="icon"><i class="fab fa-youtube" style="color: #FF0000;"></i></span>
+                <h4>YouTube-канал</h4>
+                <p>Відеоогляд для 116 000+ аудиторії</p>
+                <span class="link-hint"><i class="fas fa-arrow-up-right-from-square"></i> перейти</span>
+            </a>
+            <div class="eco-card">
+                <span class="icon"><i class="fas fa-infinity"></i></span>
+                <h4>Безстрокове розміщення</h4>
+                <p>Один платіж — назавжди в мережі</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(200,168,94,0.06);">
+            <span class="section-tag" style="margin-bottom: 0.5rem;">DomaUA сьогодні</span>
+            <h2 class="section-title" style="font-size: clamp(1.4rem, 3vw, 2.2rem); margin-bottom: 1.5rem;">Ми вже <span class="gold">довели</span> свою ефективність</h2>
+            <div class="domaua-stats">
+                <div class="stat-item"><span class="number">116 000+</span><span class="label">переглядів</span></div>
+                <div class="stat-item"><span class="number">600+</span><span class="label">об'єктів</span></div>
+                <div class="stat-item"><span class="number">15</span><span class="label">категорій</span></div>
+                <div class="stat-item"><span class="number">250+</span><span class="label">відеопрезентацій</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== БЛОК ПРО ВИСТАВКУ ===== -->
+<section data-aos="fade-up" data-aos-duration="700">
+    <div class="container section-center">
+        <span class="section-tag">Офіційна виставка</span>
+        <div class="interbuild-block">
+            <div class="expo-name">
+                <a href="https://www.iec-expo.com.ua/" target="_blank">Київський технічний ярмарок 2026</a>
+            </div>
+            <p>
+                <strong class="gold">XIV Міжнародна спеціалізована виставка «КИЇВСЬКИЙ ТЕХНІЧНИЙ ЯРМАРОК - 2026»</strong> — це авторитетний осінній майданчик для демонстрації найкращих досягнень науки, техніки й передових технологій, які є критично необхідними для інноваційного розвитку та масштабного відновлення економіки України. Це логічне продовження циклу промислових подій Київ Глобал Експо, що базується на досвіді Міжнародного промислового форуму — найбільшої та найвпливовішої галузевої виставки України, яку організатори успішно проводять вже понад 24 роки поспіль. Виставка діє як двостороння бізнес-платформа: дозволяє українським промисловцям ознайомитися з найсвіжішими світовими новинками, автоматизувати процеси, знизити витрати виробництва, а також надає вітчизняним розробникам та виробникам унікальну можливість продемонструвати власні інженерні рішення.
+            </p>
+            <a href="https://www.iec-expo.com.ua/" target="_blank" class="expo-link">
+                <i class="fas fa-external-link-alt"></i> Перейти на офіційний сайт
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ЕПІЦЕНТР КАПІТАЛУ ===== -->
+<section data-aos="fade-up" data-aos-duration="700">
+    <div class="container section-center">
+        <span class="section-tag">Епіцентр капіталу</span>
+        <h2 class="section-title">ПРОМИСЛОВІСТЬ &amp; БІЗНЕС <span class="gold">EXPO HUB</span></h2>
+        <p style="font-size: 0.9rem; color: rgba(232,230,227,0.4); margin-top: 0.5rem;">
+            <strong class="gold">Київський технічний ярмарок 2026</strong> · 13–15 жовтня · Київ, МВЦ
+        </p>
+        <div style="margin-top: 0.8rem; background: rgba(200,168,94,0.03); border-left: 3px solid #c8a85e; padding: 0.8rem 1.2rem; max-width: 600px; margin-left: auto; margin-right: auto; border-radius: 0 12px 12px 0;">
+            <p style="font-size: 0.9rem; color: rgba(232,230,227,0.6); margin: 0;">
+                <i class="fas fa-users" style="color: #c8a85e; margin-right: 0.5rem;"></i>
+                <strong>Сотні інвесторів</strong> та власників бізнесу вже зараз шукають готові об'єкти для вкладень. <span class="gold">І саме ваш об'єкт може стати для них ідеальним рішенням.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER CTA ===== -->
+<footer class="footer-cta" id="contacts">
+    <img src="https://i.postimg.cc/P5R78SpS/Risunok1.jpg" alt="Виставка" class="footer-bg" onerror="this.style.display='none'">
+    <div class="container">
+        <span class="section-tag" data-aos="fade-up">Дійте зараз</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+            Забронюйте партнерське місце <br class="hide-mobile" /> для вашого <span class="gold">об'єкта</span>
+        </h2>
+
+        <div class="urgency-block" data-aos="fade-up" data-aos-delay="150">
+            <span>Уже підтвердили участь <span class="num">5 компаній</span> · залишилось <span class="num">3 місця</span></span>
+        </div>
+
+        <p style="color: rgba(232,230,227,0.4); max-width: 500px; margin: 0.5rem auto 1.5rem; font-size: 0.85rem;" data-aos="fade-up" data-aos-delay="180">
+            Запис закривається за 2 тижні до виставки. Не відкладайте.
+        </p>
+
+        <div data-aos="fade-up" data-aos-delay="200">
+            <a href="https://wa.me/380679592044" target="_blank" class="btn-primary">
+                <i class="fab fa-whatsapp"></i> Забронювати місце
+            </a>
+        </div>
+
+        <div class="footer-contacts" data-aos="fade-up" data-aos-delay="250">
+            <a href="tel:+380679592044"><i class="fas fa-phone-alt"></i> +38 067 959-20-44</a>
+            <a href="tel:+380500566326"><i class="fas fa-phone-alt"></i> +38 050 056-63-26</a>
+            <a href="mailto:domaua.ukr@gmail.com"><i class="fas fa-envelope"></i> domaua.ukr@gmail.com</a>
+        </div>
+
+        <div class="footer-bottom" data-aos="fade-up" data-aos-delay="300">
+            <span>DomaUA — Платформа продаж нерухомості та готового бізнесу</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60, disable: 'mobile' });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+</script>
+</body>
+</html>
